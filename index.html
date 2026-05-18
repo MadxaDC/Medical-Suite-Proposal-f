@@ -1,0 +1,1160 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Private Practice Suite — Medical Hub Nasr City</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230B1C3A'/><text x='50' y='72' font-family='serif' font-size='68' font-weight='600' fill='%23C9A96E' text-anchor='middle'>M</text></svg>"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --navy: #0b1c3a;
+        --navy-mid: #142748;
+        --navy-light: #1e3560;
+        --gold: #c9a96e;
+        --gold-light: #e2c99a;
+        --gold-pale: #f5edd9;
+        --cream: #f8f4ee;
+        --white: #ffffff;
+        --text-body: #3a3a3a;
+        --text-muted: #6b6b6b;
+        --divider: rgba(201, 169, 110, 0.25);
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "DM Sans", sans-serif;
+        background: var(--cream);
+        color: var(--text-body);
+        font-size: 15px;
+        line-height: 1.7;
+      }
+
+      /* ── HERO ── */
+      .hero {
+        background: var(--navy);
+        color: var(--white);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -60px;
+        right: -80px;
+        width: 420px;
+        height: 420px;
+        border-radius: 50%;
+        border: 1px solid rgba(201, 169, 110, 0.12);
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: -100px;
+        left: -60px;
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        border: 1px solid rgba(201, 169, 110, 0.08);
+      }
+
+      .hero-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 72px 48px 64px;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        gap: 48px;
+      }
+
+      .hero-left {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .hero-right {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-eyebrow {
+        font-family: "DM Sans", sans-serif;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 28px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+
+      .hero-eyebrow::before {
+        content: "";
+        display: block;
+        width: 32px;
+        height: 1px;
+        background: var(--gold);
+      }
+
+      .hero h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 58px;
+        font-weight: 500;
+        line-height: 1.1;
+        color: var(--white);
+        margin-bottom: 24px;
+        max-width: 560px;
+      }
+
+      .hero h1 em {
+        font-style: italic;
+        color: var(--gold-light);
+      }
+
+      .hero-sub {
+        font-size: 16px;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.72);
+        max-width: 480px;
+        line-height: 1.8;
+        margin-bottom: 48px;
+      }
+
+      .hero-cta-row {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        flex-wrap: wrap;
+      }
+
+      .hero-note {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.45);
+      }
+
+      .discount-badge {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        border: 1px solid rgba(201, 169, 110, 0.35);
+        position: relative;
+      }
+
+      .discount-badge::before {
+        content: "";
+        position: absolute;
+        inset: 8px;
+        border-radius: 50%;
+        border: 1px solid rgba(201, 169, 110, 0.18);
+      }
+
+      .discount-pct {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 80px;
+        font-weight: 600;
+        color: var(--gold);
+        line-height: 1;
+      }
+
+      .discount-off {
+        font-size: 12px;
+        font-weight: 500;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.55);
+        margin-top: 4px;
+      }
+
+      .discount-label {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgba(201, 169, 110, 0.6);
+        margin-top: 6px;
+        text-align: center;
+        padding: 0 16px;
+      }
+
+      .btn-primary {
+        display: inline-block;
+        background: var(--gold);
+        color: var(--navy);
+        font-family: "DM Sans", sans-serif;
+        font-size: 13px;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none;
+        padding: 15px 36px;
+        border: none;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+
+      .btn-primary:hover {
+        background: var(--gold-light);
+      }
+
+      /* ── STAT STRIP ── */
+      .stat-strip {
+        background: var(--gold);
+        padding: 0;
+      }
+
+      .stat-strip-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 0 48px;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .stat-item {
+        padding: 28px 0;
+        border-right: 1px solid rgba(11, 28, 58, 0.18);
+        text-align: center;
+      }
+
+      .stat-item:last-child {
+        border-right: none;
+      }
+
+      .stat-num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 38px;
+        font-weight: 600;
+        color: var(--navy);
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+
+      .stat-label {
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--navy-mid);
+        opacity: 0.75;
+      }
+
+      /* ── SECTION SHARED ── */
+      section {
+        padding: 80px 48px;
+        max-width: 860px;
+        margin: 0 auto;
+      }
+
+      .section-eyebrow {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 16px;
+      }
+
+      .section-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 38px;
+        font-weight: 500;
+        color: var(--navy);
+        line-height: 1.2;
+        margin-bottom: 16px;
+      }
+
+      .section-lead {
+        font-size: 16px;
+        font-weight: 300;
+        color: var(--text-muted);
+        max-width: 520px;
+        margin-bottom: 52px;
+        line-height: 1.8;
+      }
+
+      hr.section-divider {
+        border: none;
+        border-top: 1px solid var(--divider);
+        margin: 0;
+      }
+
+      /* ── VALUE PROP BLOCK ── */
+      .vp-block {
+        background: var(--navy);
+        color: var(--white);
+        padding: 0;
+      }
+
+      .vp-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 80px 48px;
+      }
+
+      .vp-quote {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 32px;
+        font-weight: 400;
+        font-style: italic;
+        color: var(--gold-light);
+        line-height: 1.45;
+        max-width: 620px;
+        margin-bottom: 36px;
+        border-left: 2px solid var(--gold);
+        padding-left: 32px;
+      }
+
+      .vp-desc {
+        font-size: 15px;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.68);
+        max-width: 520px;
+        line-height: 1.85;
+      }
+
+      /* ── SERVICES GRID ── */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        background: var(--divider);
+        border: 1px solid var(--divider);
+        margin-top: 0;
+      }
+
+      .service-card {
+        background: var(--white);
+        padding: 32px 28px;
+        position: relative;
+      }
+
+      .service-icon {
+        width: 40px;
+        height: 40px;
+        background: var(--gold-pale);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 20px;
+      }
+
+      .service-icon svg {
+        width: 20px;
+        height: 20px;
+        stroke: var(--gold);
+        fill: none;
+        stroke-width: 1.5;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .service-card h3 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--navy);
+        margin-bottom: 10px;
+      }
+
+      .service-card p {
+        font-size: 14px;
+        font-weight: 300;
+        color: var(--text-muted);
+        line-height: 1.7;
+      }
+
+      /* ── SCHEDULE ── */
+      .schedule-wrap {
+        background: var(--cream);
+      }
+
+      .schedule-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+        margin-top: 0;
+      }
+
+      .schedule-day {
+        background: var(--white);
+        border: 1px solid var(--divider);
+        padding: 18px 12px;
+        text-align: center;
+      }
+
+      .day-label {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        margin-bottom: 14px;
+        display: block;
+      }
+
+      .slot {
+        font-size: 11px;
+        font-weight: 500;
+        padding: 8px 4px;
+        margin-bottom: 6px;
+        letter-spacing: 0.5px;
+      }
+
+      .slot.available {
+        background: var(--gold-pale);
+        color: var(--navy);
+        border-left: 2px solid var(--gold);
+      }
+
+      .slot.open {
+        background: rgba(11, 28, 58, 0.04);
+        color: var(--text-muted);
+        border: 1px dashed rgba(11, 28, 58, 0.12);
+      }
+
+      .slot-legend {
+        display: flex;
+        gap: 24px;
+        margin-top: 24px;
+      }
+
+      .legend-item {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 12px;
+        color: var(--text-muted);
+      }
+
+      .legend-dot {
+        width: 10px;
+        height: 10px;
+        flex-shrink: 0;
+      }
+
+      .legend-dot.available {
+        background: var(--gold);
+      }
+      .legend-dot.open {
+        background: rgba(11, 28, 58, 0.1);
+        border: 1px dashed rgba(11, 28, 58, 0.2);
+      }
+
+      /* ── PRICING ── */
+      .pricing-wrap {
+        background: var(--navy);
+      }
+
+      .pricing-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 80px 48px;
+      }
+
+      .pricing-card {
+        background: var(--navy-light);
+        border: 1px solid rgba(201, 169, 110, 0.25);
+        padding: 48px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 48px;
+        align-items: start;
+      }
+
+      .price-block .price-label {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 16px;
+      }
+
+      .price-amount {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 64px;
+        font-weight: 500;
+        color: var(--white);
+        line-height: 1;
+        margin-bottom: 6px;
+      }
+
+      .price-unit {
+        font-size: 13px;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.45);
+        margin-bottom: 28px;
+      }
+
+      .price-note {
+        font-size: 13px;
+        color: rgba(255, 255, 255, 0.55);
+        line-height: 1.7;
+        font-weight: 300;
+      }
+
+      .includes-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .includes-list li {
+        font-size: 14px;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.75);
+        padding: 11px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        line-height: 1.5;
+      }
+
+      .includes-list li::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--gold);
+        flex-shrink: 0;
+        margin-top: 6px;
+      }
+
+      /* ── TERMS ── */
+      .terms-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .term-card {
+        background: var(--white);
+        border: 1px solid var(--divider);
+        padding: 28px 24px;
+      }
+
+      .term-num {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 42px;
+        font-weight: 400;
+        color: var(--gold);
+        opacity: 0.5;
+        line-height: 1;
+        margin-bottom: 12px;
+      }
+
+      .term-card h4 {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--navy);
+        letter-spacing: 0.5px;
+        margin-bottom: 8px;
+      }
+
+      .term-card p {
+        font-size: 13px;
+        font-weight: 300;
+        color: var(--text-muted);
+        line-height: 1.7;
+      }
+
+      /* ── CTA ── */
+      .cta-wrap {
+        background: var(--gold-pale);
+        padding: 0;
+      }
+
+      .cta-inner {
+        max-width: 860px;
+        margin: 0 auto;
+        padding: 80px 48px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+
+      .cta-left h2 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 40px;
+        font-weight: 500;
+        color: var(--navy);
+        line-height: 1.2;
+        margin-bottom: 16px;
+      }
+
+      .cta-left p {
+        font-size: 14px;
+        font-weight: 300;
+        color: var(--text-muted);
+        line-height: 1.8;
+      }
+
+      .deposit-box {
+        background: var(--navy);
+        padding: 36px 32px;
+        color: var(--white);
+      }
+
+      .deposit-box .deposit-label {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 12px;
+      }
+
+      .deposit-amount {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 44px;
+        font-weight: 500;
+        color: var(--white);
+        line-height: 1;
+        margin-bottom: 4px;
+      }
+
+      .deposit-sub {
+        font-size: 12px;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.45);
+        margin-bottom: 28px;
+      }
+
+      .deposit-box .contact-row {
+        margin-top: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 24px;
+      }
+
+      .contact-label {
+        font-size: 10px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.4);
+        margin-bottom: 12px;
+      }
+
+      .contact-item {
+        font-size: 14px;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 6px;
+        display: flex;
+        gap: 8px;
+        align-items: flex-start;
+      }
+
+      .contact-item strong {
+        color: var(--white);
+        font-weight: 500;
+      }
+
+      /* ── FOOTER ── */
+      .footer {
+        background: var(--navy);
+        padding: 32px 48px;
+        text-align: center;
+      }
+
+      .footer p {
+        font-size: 12px;
+        font-weight: 300;
+        color: rgba(255, 255, 255, 0.3);
+        letter-spacing: 0.5px;
+      }
+
+      /* ── PRINT ── */
+      @media print {
+        body {
+          background: white;
+          font-size: 13px;
+        }
+        .hero {
+          break-after: avoid;
+        }
+        section {
+          padding: 40px 32px;
+        }
+        .hero-inner,
+        .vp-inner,
+        .pricing-inner,
+        .cta-inner {
+          padding: 40px 32px;
+        }
+        .hero h1 {
+          font-size: 40px;
+        }
+        .services-grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .schedule-grid {
+          grid-template-columns: repeat(6, 1fr);
+        }
+      }
+
+      @media (max-width: 640px) {
+        .hero-inner,
+        .vp-inner,
+        .pricing-inner,
+        .cta-inner {
+          padding: 48px 24px;
+        }
+        section {
+          padding: 56px 24px;
+        }
+        .hero h1 {
+          font-size: 38px;
+        }
+        .stat-strip-inner {
+          grid-template-columns: 1fr;
+          padding: 0 24px;
+        }
+        .stat-item {
+          border-right: none;
+          border-bottom: 1px solid rgba(11, 28, 58, 0.18);
+          padding: 20px 0;
+        }
+        .stat-item:last-child {
+          border-bottom: none;
+        }
+        .services-grid {
+          grid-template-columns: 1fr;
+        }
+        .schedule-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .pricing-card {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .terms-grid {
+          grid-template-columns: 1fr;
+        }
+        .cta-inner {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
+        .footer {
+          padding: 24px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ───── HERO ───── -->
+    <div class="hero">
+      <div class="hero-inner">
+        <div class="hero-left">
+          <p class="hero-eyebrow">
+            MADXA Managed Medical Suite · Nasr City, Cairo
+          </p>
+          <h1>
+            Practice medicine.
+            <br />
+            <em>We handle the rest.</em>
+          </h1>
+          <p class="hero-sub">
+            A fully furnished, staffed, and managed private clinic — available
+            two days a week, with no setup costs, no administrative burden, and
+            no long-term obligation.
+          </p>
+          <div class="hero-cta-row">
+            <a
+              href="#reserve"
+              class="btn-primary"
+            >
+              Reserve Your Slot
+            </a>
+            <p class="hero-note">Limited slots availability</p>
+          </div>
+        </div>
+
+        <div class="hero-right">
+          <div class="discount-badge">
+            <div class="discount-pct">30%</div>
+            <div class="discount-off">OFF</div>
+            <div class="discount-label">Founding doctor rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── STAT STRIP ───── -->
+    <div class="stat-strip">
+      <div class="stat-strip-inner">
+        <div class="stat-item">
+          <div class="stat-num">60m²</div>
+          <div class="stat-label">Managed Suite Area</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">2</div>
+          <div class="stat-label">Fixed Days Per Week</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">3mo</div>
+          <div class="stat-label">Pilot Agreement</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── VALUE PROP ───── -->
+    <div class="vp-block">
+      <div class="vp-inner">
+        <p
+          class="section-eyebrow"
+          style="color: var(--gold)"
+        >
+          The Proposition
+        </p>
+        <blockquote class="vp-quote">
+          "Show up, see your patients, and leave — everything else is already
+          taken care of."
+        </blockquote>
+        <p class="vp-desc">
+          Medical Center 3, 2nd Floor, Nasr City. A complete private clinic
+          environment — furnished, branded, staffed with a nurse and
+          receptionist, managed with a digital system, and supported by a full
+          marketing and operations infrastructure. You bring your expertise. We
+          bring everything else.
+        </p>
+      </div>
+    </div>
+
+    <!-- ───── WHAT'S INCLUDED ───── -->
+    <section>
+      <p class="section-eyebrow">What's Included</p>
+      <h2 class="section-title">
+        Everything a private clinic needs.
+        <br />
+        Day one, fully operational.
+      </h2>
+      <p class="section-lead">
+        No setup. No sourcing. No hiring. The suite is ready before your first
+        patient walks in.
+      </p>
+    </section>
+
+    <div style="max-width: 860px; margin: 0 auto; padding: 0 48px 80px">
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <rect
+                x="3"
+                y="3"
+                width="18"
+                height="18"
+                rx="2"
+              />
+              <path d="M3 9h18M9 21V9" />
+            </svg>
+          </div>
+          <h3>Furnished Consultation Room</h3>
+          <p>
+            Fully equipped consultation room with examination table, physician
+            desk, patient seating, and clinical storage — ready from day one.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <circle
+                cx="12"
+                cy="8"
+                r="4"
+              />
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+            </svg>
+          </div>
+          <h3>Dedicated Receptionist & Admin</h3>
+          <p>
+            A trained front-desk receptionist manages your appointment flow,
+            patient communications, and daily administrative tasks.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h3>Nurse Support</h3>
+          <p>
+            On-site nurse handles patient preparation, vital signs, and clinical
+            assistance — shared across the hub, available throughout your
+            sessions.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <rect
+                x="2"
+                y="3"
+                width="20"
+                height="14"
+                rx="2"
+              />
+              <path d="M8 21h8M12 17v4" />
+            </svg>
+          </div>
+          <h3>Clinic Management System</h3>
+          <p>
+            Digital appointment booking, patient records, and follow-up tracking
+            — built in and configured before you start. No setup needed on your
+            end.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" />
+              <path d="M2 17l10 5 10-5M2 12l10 5 10-5" />
+            </svg>
+          </div>
+          <h3>Marketing Support</h3>
+          <p>
+            Clinic-level digital presence, Google listing management, and social
+            media support powered by our in-house marketing agency.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24">
+              <circle
+                cx="12"
+                cy="12"
+                r="10"
+              />
+              <path d="M12 8v4l3 3" />
+            </svg>
+          </div>
+          <h3>Full Operational Management</h3>
+          <p>
+            Scheduling, patient flow, supplies, and day-to-day coordination are
+            handled by our medical operations team. You focus on medicine —
+            nothing else.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <hr
+      class="section-divider"
+      style="max-width: 860px; margin: 0 auto 0"
+    />
+
+    <!-- ───── PRICING ───── -->
+    <div class="pricing-wrap">
+      <div class="pricing-inner">
+        <p
+          class="section-eyebrow"
+          style="color: var(--gold)"
+        >
+          Investment
+        </p>
+        <h2
+          class="section-title"
+          style="color: var(--white)"
+        >
+          Transparent, all-inclusive pricing.
+        </h2>
+
+        <div class="pricing-card">
+          <div class="price-block">
+            <p class="price-label">Monthly Fee</p>
+            <div class="price-amount">30,000</div>
+            <p class="price-unit">Egyptian Pounds / month · 2 days per week</p>
+            <p class="price-note">
+              Compare: a standalone private clinic in Nasr City costs
+              25,000–45,000 EGP per month — for rent alone, with zero included
+              services. This suite provides the full infrastructure at a
+              proportional fraction of that commitment.
+            </p>
+          </div>
+
+          <div>
+            <p class="price-label">Everything included</p>
+            <ul class="includes-list">
+              <li>Furnished consultation room</li>
+              <li>Nurse support on clinic days</li>
+              <li>Receptionist & patient admin</li>
+              <li>Clinic management software</li>
+              <li>Basic marketing & digital presence</li>
+              <li>Operational management</li>
+              <li>Utilities, maintenance & supplies</li>
+              <li>Access to labs, imaging & home care referral network</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── TERMS ───── -->
+    <section>
+      <p class="section-eyebrow">Agreement Structure</p>
+      <h2 class="section-title">
+        A pilot designed to be risk-free for both sides.
+      </h2>
+      <p class="section-lead">
+        We believe in earning long-term relationships, not enforcing them. The
+        6-month pilot exists so you can verify the value before any extended
+        commitment.
+      </p>
+
+      <div class="terms-grid">
+        <div class="term-card">
+          <div class="term-num">01</div>
+          <h4>3-Month Pilot Agreement</h4>
+          <p>
+            Begin with a 3-month managed service agreement. Full infrastructure,
+            full support — with the ability to assess fit before any longer
+            commitment.
+          </p>
+        </div>
+        <div class="term-card">
+          <div class="term-num">02</div>
+          <h4>Convert to 12-Month Contract</h4>
+          <p>
+            If you're satisfied at month 6, convert to an annual agreement.
+            Founding doctors lock in the same monthly rate for the full 12
+            months.
+          </p>
+        </div>
+        <div class="term-card">
+          <div class="term-num">03</div>
+          <h4>Formal Long Service Agreement</h4>
+          <p>
+            A clear management and services agreement governs the relationship —
+            defining what's included, scheduling rights, and operational
+            responsibilities.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr
+      class="section-divider"
+      style="max-width: 860px; margin: 0 auto"
+    />
+
+    <!-- ───── CTA / RESERVE ───── -->
+    <div
+      class="cta-wrap"
+      id="reserve"
+    >
+      <div class="cta-inner">
+        <div class="cta-left">
+          <h2>Reserve your slot before it's taken.</h2>
+          <p>
+            Reservation requires a refundable deposit of 15,000 EGP. If the
+            suite does not launch within 30 days, your deposit is returned in
+            full — no questions asked.
+            <br />
+            <br />
+            To begin, reach out directly. We'll schedule a walkthrough of the
+            space and discuss your specific specialty and scheduling needs.
+          </p>
+        </div>
+
+        <div class="deposit-box">
+          <p class="deposit-label">Reservation Deposit</p>
+          <div class="deposit-amount">15,000</div>
+          <p class="deposit-sub">Egyptian Pounds · Fully refundable</p>
+
+          <div class="contact-row">
+            <p class="contact-label">To Reserve or Enquire</p>
+            <div class="contact-item">
+              <strong>Phone / WhatsApp</strong>
+            </div>
+            <div
+              class="contact-item"
+              style="
+                color: rgba(255, 255, 255, 0.55);
+                font-size: 13px;
+                margin-top: -2px;
+                margin-bottom: 14px;
+              "
+            >
+              +201097799176
+            </div>
+            <div class="contact-item">
+              <strong>Email</strong>
+            </div>
+            <div
+              class="contact-item"
+              style="
+                color: rgba(255, 255, 255, 0.55);
+                font-size: 13px;
+                margin-top: -2px;
+                margin-bottom: 14px;
+              "
+            >
+              mahmoud.gamal.farghly@gmail.com
+            </div>
+            <div class="contact-item">
+              <strong>Location</strong>
+            </div>
+            <div
+              class="contact-item"
+              style="
+                color: rgba(255, 255, 255, 0.55);
+                font-size: 13px;
+                margin-top: -2px;
+              "
+            >
+              Medical Center 3, 2nd Floor, Nasr City, Cairo
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ───── FOOTER ───── -->
+    <div class="footer">
+      <p>
+        Managed Medical Suite · Medical Center 3 · Nasr City, Cairo, Egypt ·
+        Confidential Proposal Document
+      </p>
+    </div>
+  </body>
+</html>
